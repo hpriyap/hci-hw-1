@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Philadelphia</title>
+    <!-- Add this line to import the Alike font -->
+    <link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Alike', serif; /* Updated font-family */
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff9966, #99ccff);
+            color: #333;
+        }
+        /* Rest of the CSS remains the same */
+        .container {
+            max-width: 375px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        .menu-icon {
+            font-size: 24px;
+        }
+        .alert {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .city {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .temperature {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .time {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .weather-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .weather-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .weather-box h3 {
+            margin-top: 0;
+            font-size: 16px;
+        }
+        .weather-box p {
+            margin: 5px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .weather-box small {
+            font-size: 12px;
+        }
+        .itinerary {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .itinerary h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .forecast {
+            display: flex;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        .forecast-item {
+            text-align: center;
+            margin-right: 15px;
+        }
+        .forecast-item img {
+            width: 30px;
+            height: 30px;
+        }
+        .earth-map {
+            background-color: #001f3f;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        .earth-map img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .toggle-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: last baseline left;
+            margin-top: 10px;
+            width: 24px; /* Set width */
+            height: 24px; /* Set height */
+        }
+        .toggle-container img {
+            width: 24px; /* Set width */
+            height: 24px; /* Set height */
+        }
+
+
+        
+        .toggle {
+            width: 50px;
+            height: 24px;
+            background-color: #ccc;
+            border-radius: 12px;
+            position: relative;
+        }
+        .toggle::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: 0.3s;
+        }
+        .toggle.active {
+            background-color: #4CAF50;
+        }
+        .toggle.active::after {
+            left: 28px;
+        }
+    </style>
+</head>
+<body>
+    <!-- The rest of the HTML remains the same -->
+    <div class="container">
+        <header>
+            <a href="file:///C:/Users/pothu/OneDrive/Desktop/html-css-course/places%20page.html">            
+                <div class="menu-icon">☰</div>
+            </a>
+        </header>
+        <div class="alert">
+            Caution: High speed gusts expected around 6pm
+        </div>
+        <div class="city">Philadelphia</div>
+        <div class="temperature">72°F</div>
+        <div class="time">12:33pm</div>
+        <div class="weather-details">
+            <div class="weather-box">
+                <h3>Air Quality</h3>
+                <p>38 <small>Good</small></p>
+                <small>Similar to yesterday at this time</small>
+            </div>
+            <div class="weather-box">
+                <h3>Wind Speed</h3>
+                <p>5 <small>MPH Wind</small></p>
+                <p>12 <small>MPH Gusts</small></p>
+            </div>
+            <div class="weather-box">
+                <h3>Visibility</h3>
+                <p>13 <small>mi</small></p>
+                <small>Perfectly clear view</small>
+            </div>
+            <div class="weather-box">
+                <h3>Humidity</h3>
+                <p>40%</p>
+                <small>The dew point is 53 right now</small>
+            </div>
+        </div>
+        <div class="itinerary">
+            <h2>Plan Your Itinerary</h2>
+            <p>Check the forecast at each point of your route to plan ahead</p>
+            <div class="forecast">
+                <div class="forecast-item">
+                    <p>Now</p>
+                    
+                    <p>72°F</p>
+                </div>
+                <div class="forecast-item">
+                    <p>1pm</p>
+                    
+                    <p>71°F</p>
+                </div>
+                <div class="forecast-item">
+                  <p>2pm</p>
+                  
+                  <p>69°F</p>
+              </div>
+                <div class="forecast-item">
+                  <p>3pm</p>
+                  
+                  <p>69°F</p>
+              </div>
+                <div class="forecast-item">
+                  <p>4pm</p>
+                  
+                  <p>68°F</p>
+            </div>
+            <div class="forecast-item">
+              <p>5pm</p>
+              
+              <p>67°F</p>
+        </div>
+        </div>
+        <div class="earth-map">
+            <p>Earth map for wind, weather and ocean conditions</p>
+            <img src="C:\Users\pothu\OneDrive\Pictures\Screenshots\Screenshot (16).png" alt="Earth Map">
+            <div class="toggle-container">
+                <a href="file:///C:/Users/pothu/OneDrive/Desktop/html-css-course/settingspage.html">
+                <img src="C:\Users\pothu\OneDrive\Pictures\Screenshots\Screenshot (35).png">
+                </a>
+            </div>     
+        </div>
+    </div>
+</body>
+</html>
